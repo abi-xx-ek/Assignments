@@ -1,0 +1,151 @@
+1.Sum of three numbers
+
+Input 3 numbers Num1,Num2,Num3
+Sum=Num1+Num2+Num3
+Print(Sum)
+
+
+2.Sum of squares of two numbers
+
+Input 2 numbers Num1,Num2
+Sum=Num1*Num1+Num2*Num2
+Print(Sum)
+
+
+
+3.Reverse a number
+
+Input the number to be reversed as num
+For i in range(len(num)-1,-1,-1):
+    Print(Num[i])
+
+
+
+
+4.Reverse a string
+Input the string to be reversed as Str
+For i in range(len(Str)-1,-1,-1):
+    Print(Str[i])
+
+
+5.Find the given character in the string, return true or false
+
+
+function to check if the given character is in the string
+
+def check(str,ch):
+    IF ch in str:
+        return true
+    ELSE:
+        return false
+
+Main function
+
+Input the string as Str
+Input the character to be checked as ch
+
+Result=check(str,ch)
+IF Result==true:
+    Print("The character is found")
+ELSE:
+    Print("The character is not found")
+
+
+
+
+6.Find the number of occurrences of a character in a given string
+
+Input the string as Str
+Input the character to be checked as ch
+Count=0
+FOR i in Str:
+    IF i==ch:
+        Count=Count+1
+Print("The count is ",Count)
+
+
+
+
+7.Fibonacci series of numbers
+
+
+Input the number of terms as n
+First=0
+Second=1
+IF n==0:
+    Print(First)
+ELSE IF n==1:
+    Print(Second)
+ELSE:
+    Print(First)
+    Print(Second)
+    FOR i in range(2,n):
+        Print(First+Second)
+        temp=First
+        First=Second
+        Second=temp+Second
+
+
+8.Tower of Hanoi
+
+function Hanoi
+def Hanoi(n,Source,Destination,Auxiliary):
+    IF n==1:
+        Print(f'Move disk{n} from {Source} to {Destination}')
+    Hanoi(n-1,Source,Auxiliary,Destination)
+    Print(f'Move disk{n} from {Source} to {Destination}')
+    Hanoi(n-1,Auxiliary,Destination,Source)
+
+
+Main
+Input the number of disks as n
+Hanoi(n,'A','B','C')
+
+
+
+
+9.Linear search
+
+
+Input the array as arr
+Input the number to be searched as n
+FOR i in range(len(arr)):
+    IF arr[i]==n:
+        Print(f'Value found at{i+1} position')
+    ELSE:
+        Print("Value not found")
+
+
+
+
+10.Binary search
+
+Input the array as arr
+Input the number to be searched as val
+arr.sort() // sort the array before proceeding
+low=0
+high=len(arr)-1
+WHILE(low<high):
+    mid=low+high//2
+    IF arr[mid]==val:
+        Print(f'Value {val} is found at {mid+1} position')
+        BREAK
+    ELSE IF arr[mid]<val:
+        low=mid+1
+    ELSE:
+        high=mid-1
+IF arr[mid]!=val:
+    Print(f'value {val} is not found')
+
+
+
+11.Bubble sort
+
+Input the array as arr
+FOR i in range(len(arr)):
+    FOR j in range(1,len(arr)):
+        IF arr[j]<arr[j-1]:
+            temp=arr[j]
+            arr[j]=arr[j-1]
+            arr[j-1]=temp
+Print(arr)
