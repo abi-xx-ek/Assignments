@@ -1,6 +1,7 @@
 Create a table students and insert names in malayalam
 
-
+    create table employee(empid int primary key,empname nvarchar(20))
+    insert into employee values(1,N'അഭിഷേക്')
 
 Retrieve all employees who work in Sales, Marketing, or IT departments.
 
@@ -105,9 +106,11 @@ Find the average quantity sold per sale for each product category.
 
 List the top 5 customers by their total purchase amount. Include the CustomerID and total purchase amount.
 
+    select customerid,(quantity*unitprice) as total_purchase from sales order by (quantity*unitprice) desc offset 0  rows fetch next 5 rows only
 
 Determine the number of sales made each month in the year 2023. Display the month and the count of sales.
     
+    select month(saledate) as monthofsale,count(quantity) as total_sales from sales where year(saledate)=2024 group by month(saledate)
 
 
 Calculate the total revenue for each state, but only for states with more than $10,000 in total sales.
@@ -118,11 +121,17 @@ Calculate the total revenue for each state, but only for states with more than $
 
 Find products that have been sold more than 100 times in total. Display the ProductID, ProductName, and the total quantity sold.
 
+    select p.productname,p.productid,sum(quantity) as total_quantity from products p,totalsales s where s.productid=p.productid group by p.productid,p.productname having sum(quantity)>100
+
+
 
 For each customer, find the date of their first purchase and the date of their most recent purchase.
+
+    select c.customerid,c.customername ,min(saledate) as firstpurchase,max(saledate) as lastpurchase from customers c,totalsales s where s.customerid=c.customerid group by c.customerid,c.customername
 
 
 
 Find the customers who have made purchases on at least 5 different dates. Display the CustomerID and the count of distinct purchase dates.
 
+    select c.customerid,count(distinct s.saledate) as dates from customers c,totalsales s where c.customerid=s.customerid group by c.customerid having count(distinct s.saledate) >5
 
