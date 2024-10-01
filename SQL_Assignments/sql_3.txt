@@ -133,6 +133,7 @@ select len('hello ')
 
 22. Write a query to pad all product codes in a 'Products' table to a length of 10 characters with leading zeros.
 
+    select right(REPLICATE('0', 10) + 1233, 10) as paddedcode
 
 
 
@@ -145,7 +146,7 @@ select len('hello ')
 
 24. From an 'Emails' table, mask the username part of email addresses, showing only the first and last characters.
 
-
+    select substring(email,1,1)+replicate('*',CHARINDEX('@',email)-3)+SUBSTRING(email,CHARINDEX('@',email)-1,len(email)) from emp
 
 
 25. Convert the string 'sql server' to uppercase.
@@ -199,6 +200,8 @@ select len('hello ')
 
 34. From an 'Orders' table with an 'OrderTotal' column, display the total as a currency with 2 decimal places.
 
+    select cast(OrderTotal AS DECIMAL(10, 2)) AS formatted_order_total from orders
+
 
 
 35. Separate the string 'apple,banana,cherry' into individual fruits.
@@ -209,6 +212,7 @@ select len('hello ')
 
 36. From a 'Skills' table with a 'SkillList' column containing comma-separated skills, write a query to create a row for each individual skill.
 
+    select value as skills from skills cross apply string_split(SkillList,',')
 
 
 
@@ -220,6 +224,7 @@ select len('hello ')
 
 38. From an 'Orders' table, find all orders placed in the last 24 hours.
 
+    SELECT * from totalsales where datediff(day,saledate,getdate())<=1
 
 
 
@@ -275,6 +280,8 @@ select len('hello ')
 
 48. From a 'Sales' table, write a query to group total sales by the quarter of the sale date.
 
+    select sum(quantity) as total_sales,datepart(quarter,saledate) as quarter_no from totalsales group by datepart(quarter,saledate)
+
 
 
 
@@ -291,82 +298,97 @@ select len('hello ')
 
 51. Check if '2023-02-30' is a valid date.
 
+    if try_convert(date,'2023-02-30') is not null begin print 'date is valid' end
+    else begin print 'date is not valid' end
+
 
 
 52. Write a query to find all rows in a 'UserInputs' table where the 'EnteredDate' column contains invalid dates.
 
+    select * from UserInputs where TRY_CONVERT(date,EnteredDateDate) is null
 
 
 
 53. Find the last day of the current month.
 
+    select day(EOMONTH(GETDATE())) as last_date
 
 
 54. From a 'Subscriptions' table, write a query to extend all subscription end dates to the end of their respective months.
 
-
+    update subscription set subscription_date=EOMONTH(subscription_date)
 
 55. Display the current date and time.
 
-
+    select getdate() as current_date_time
 
 56. Compare the results of two different methods to get the current timestamp - are they always the same?
 
-
+    getdate()-gives the date and time with lower precision
+    sysdatetime()-gives the date and time with higher precision
 
 57. Get the current date and time with higher precision than standard methods.
 
-
+    
+    select SYSDATETIME()
 
 58. Write a query to insert the current high-precision timestamp into a 'Logs' table.
 
+    insert into Logs (LogTime) values (SYSDATETIME())
 
 
 59. Display the current UTC date and time with high precision.
 
-
+    select SYSDATETIMEOFFSET()
 
 60. Calculate the difference in microseconds between the current local time and UTC time.
 
-
+    select DATEDIFF(microsecond,sysdatetime(),sysdatetimeoffset()) as diff_in_microsec
 
 61. Get the current date, time, and time zone offset.
 
+        select SYSDATETIMEOFFSET()
 
 
 62. From a 'GlobalEvents' table, convert all event times to include time zone offset information.
 
-
+    alter table GlobalEvents alter column event_time datetimeoffset
 
 63. Extract the month number from the date '2023-12-25'.
 
-
+    select month('2023-12-25') as month_number
 
 64. From a 'Sales' table, find the total sales for each month of the previous year.
 
+    select datename(month,SaleDate) as month_of_sales,sum(quantity) as total_quantity from totalsales where year(saledate)=year(GETDATE())-1 group by month(SaleDate),datename(month,saledate)
 
 
 65. Extract the day of the month from '2023-03-15'.
 
-
+    select day('2023-03-15') as day_of_the_month
 
 66. Write a query to find all orders from an 'Orders' table that were placed on the 15th day of any month.
 
+    select orders from Orders where day(order_placed_day)=15
 
 
 67. Get the name of the month for the date '2023-09-01'.
 
-
+    select DATENAME(month,'2023-09-01')
 
 68. From an 'Events' table, write a query to display the day of the week (in words) for each event date.
+
+    select datename(weekday,eventdate)from events
 
 
 
 69. Create a date for Christmas Day 2023.
 
+    select cast('2024-12-25' as date) as christmas
 
 
 
 70. Write a query to convert separate year, month, and day columns from a 'Dates' table into a single DATE column.
 
 
+    select concat(year,'-',month,'-',day) as Combined_date from dates
