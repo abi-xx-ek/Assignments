@@ -1,0 +1,82 @@
+CREATE TABLE: Creates an Employees table with columns for EmployeeID, FirstName, LastName, Department, and Salary.
+
+    Create table emp(EmpoyeeID int primary key,firstname varchar(20),lastname varchar(20),department varchar(20),salery int)
+
+
+
+INSERT: Adds three employee records to the table.
+
+    insert into emp values(1,'akash','j','IT',50000)
+    insert into emp values(,2'arun','p','NON-IT',32000)
+    insert into emp values(31,'Abhishek','s','IT'38000)
+
+
+SELECT: Shows different ways to query data:
+
+    select* from emp
+    select Department,FirstName from emp where EmployeeID=1
+    select Firstname ,salary from emp
+
+
+Select all columns and rows
+  
+    select* from emp
+
+
+Select specific columns
+
+    select Firstname ,salary from emp
+
+
+Select with a WHERE clause to filter results
+
+    select Department,FirstName from emp where EmployeeID=1
+
+
+What is the purpose of the IDENTITY keyword in the CREATE TABLE statement?
+
+    IDENTITY keyword is used to auto increment columns
+    IDENTITY(1,1) means it will start with 1 and when each data is enterd its value will be increased by 1
+
+
+Write a SELECT statement to retrieve only the FirstName and Salary of all employees.
+
+    select FirstName,Salary from emp
+
+How would you modify the existing UPDATE statement to give all employees in the IT department a 10% raise
+
+    update emp set salary=salary+salary/10 where Department ='IT' 
+
+Write a SELECT statement to find the highest salary in the Employees table.How would you add a new column named "HireDate" of type DATE to the Employees table?
+
+    select * from emp where Salary =(select max(salary) from emp)
+    alter table emp add HireDate Date
+
+Write an INSERT statement to add a new employee named "Sarah Brown" in the "Marketing" department with a salary of 72000.00.
+
+    insert into emp values(4,'Sarah','brown','Managment',72000,null)
+
+
+How would you modify the table to ensure that the Salary column cannot contain negative values?
+
+    alter table emp add constraint not_neg check(salary>=0)
+
+
+
+
+How would you add a UNIQUE constraint to the Employees table to ensure that no two employees can have the same email address
+
+    alter table emp add email varchar(20)
+    update emp set email='abhishek.gmail.com' where EmployeeID=1
+    update emp set email='hari.gmail.com' where EmployeeID=2
+    update emp set email='aadhi.gmail.com' where EmployeeID=3
+    update emp set email='sarah.gmail.com' where EmployeeID=4
+
+    alter table emp add constraint email unique(email)
+
+Write an ALTER TABLE statement to add an "Email" column to the Employees table with a UNIQUE constraint that allows NULL values
+
+    create unique index uni_ind on emp(email) where email is not null
+
+
+
