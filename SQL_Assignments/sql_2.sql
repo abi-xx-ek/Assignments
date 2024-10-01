@@ -134,4 +134,5 @@ For each customer, find the date of their first purchase and the date of their m
 Find the customers who have made purchases on at least 5 different dates. Display the CustomerID and the count of distinct purchase dates.
 
     select c.customerid,count(distinct s.saledate) as dates from customers c,totalsales s where c.customerid=s.customerid group by c.customerid having count(distinct s.saledate) >5
-
+	select * from Customers
+	select * from totalsales
