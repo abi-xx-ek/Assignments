@@ -1,0 +1,6 @@
+C:\Assignments\local\C#\math.operations\bin\Debug\math.operations.dll
+C:\Assignments\local\C#\math.operations\bin\Debug\math.operations.pdb
+C:\Assignments\local\C#\math.operations\obj\Debug\math.operations.csproj.AssemblyReference.cache
+C:\Assignments\local\C#\math.operations\obj\Debug\math.operations.csproj.CoreCompileInputs.cache
+C:\Assignments\local\C#\math.operations\obj\Debug\math.operations.dll
+C:\Assignments\local\C#\math.operations\obj\Debug\math.operations.pdb
