@@ -39,23 +39,23 @@ let arr=[
 
 1. List the movie name along with the actor name of those movies released in the year 2022
 
-console.log(arr.filter(x=>new Date(x.ReleaseDate).getFullYear()==2022).map(x=>`actor:${x.ActorName}  movie:${x.MovieName}`));
+console.log(arr.filter(x=>new Date(x.ReleaseDate).getFullYear()===2022).map(x=>`actor:${x.ActorName}  movie:${x.MovieName}`));
 
 2. List the movie names released in the year 2023 where the actor is William Davis.
 
-console.log(arr.filter(x=>new Date(x.ReleaseDate).getFullYear()==2023 && x.ActorName=="William Davis").map(x=>x.MovieName));
+console.log(arr.filter(x=>new Date(x.ReleaseDate).getFullYear()===2023 && x.ActorName==="William Davis").map(x=>x.MovieName));
 
 3. Retrieve the Actor name and release date of the movie “The Last Stand”
 
-console.log(arr.filter(x=>x.MovieName=="The Last Stand").map(x=>`actor:${x.ActorName}  ReleaseDate:${x.ReleaseDate}`));
+console.log(arr.filter(x=>x.MovieName==="The Last Stand").map(x=>`actor:${x.ActorName}  ReleaseDate:${x.ReleaseDate}`));
 
 4. Check whether there is any movie in the list with actor name “John Doe”
 
-console.log(arr.some(x=>x.ActorName=="John Doe"));
+console.log(arr.some(x=>x.ActorName==="John Doe"));
 
 5. Display the count of movies where the actor name is "Sophia Williams"
 
-console.log(arr.filter(x=>x.ActorName=="Sophia Williams").length);
+console.log(arr.filter(x=>x.ActorName==="Sophia Williams").length);
 
 6. Insert an element
 		{
@@ -107,7 +107,7 @@ console.log(new Set(arr.map(x=>x.ActorName)));
 	as next element to movie “Love and Destiny”
 
 
-    const ind=arr.findIndex(x=>x.MovieName=="Love and Destiny");
+    const ind=arr.findIndex(x=>x.MovieName==="Love and Destiny");
 
     arr.splice(ind+1,0,{
         "MovieName": "Rich & Poor",
@@ -124,7 +124,7 @@ console.log(new Set(arr.map(x=>x.ActorName)).size);
 
 12. Remove the movie named  "The Last Stand"
 
-const index_=arr.findIndex((x => x.MovieName == "The Last Stand"));
+const index_=arr.findIndex((x => x.MovieName === "The Last Stand"));
 delete arr[index_];
 console.log(arr);
 
@@ -134,7 +134,7 @@ console.log(arr.every(x=>x.ReleaseDate>"2021-12-31"));
 
 14. Update movie named  "City of Shadows" ‘s release date as  "2023-03-13"
 
-const val=arr.filter(x=>x.MovieName=="City of Shadows");
+const val=arr.filter(x=>x.MovieName==="City of Shadows");
 val[0].ReleaseDate=("2023-03-30");
 
 
