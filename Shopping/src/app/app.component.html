@@ -1,0 +1,15 @@
+<h1 align ="center">My shopping List</h1>
+<app-item 
+[items]="items" 
+[count]="count" 
+(itemsChange)="onItemsChange($event)" 
+(countChange)="onCountChange($event)">
+</app-item>
+
+
+
+<app-list
+[items]="items" 
+[count]="count" 
+(itemsChange)="onItemsChange($event)" 
+(countChange)="onCountChange($event)"></app-list>
