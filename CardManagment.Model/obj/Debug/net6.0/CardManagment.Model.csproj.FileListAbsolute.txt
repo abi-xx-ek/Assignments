@@ -1,0 +1,14 @@
+C:\Assignments\local\App\CardManagment.Model\bin\Debug\net6.0\CardManagment.Model.deps.json
+C:\Assignments\local\App\CardManagment.Model\bin\Debug\net6.0\CardManagment.Model.runtimeconfig.json
+C:\Assignments\local\App\CardManagment.Model\bin\Debug\net6.0\CardManagment.Model.dll
+C:\Assignments\local\App\CardManagment.Model\bin\Debug\net6.0\CardManagment.Model.pdb
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\CardManagment.Model.csproj.AssemblyReference.cache
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\CardManagment.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\CardManagment.Model.AssemblyInfoInputs.cache
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\CardManagment.Model.AssemblyInfo.cs
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\CardManagment.Model.csproj.CoreCompileInputs.cache
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\CardManagment.Model.dll
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\refint\CardManagment.Model.dll
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\CardManagment.Model.pdb
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\CardManagment.Model.genruntimeconfig.cache
+C:\Assignments\local\App\CardManagment.Model\obj\Debug\net6.0\ref\CardManagment.Model.dll
