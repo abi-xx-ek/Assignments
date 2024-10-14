@@ -2,32 +2,47 @@
 
 <form [formGroup]="emp" (ngSubmit)="OnSubmitForm()">
   <div>
-    <label>Name :</label>
-    <input type="text" class="input" formControlName="Name"> 
+    <label>First Name :</label>
+    <input type="text" formControlName="FirstName"> 
+  </div>
+
+  <div>
+    <label>Last Name :</label>
+    <input type="text" formControlName="LastName"> 
   </div>
 
   <div>
     <label>Email :</label>
-    <input type="text" class="Email" formControlName="Email">
-  </div>
-
-  <div>
-    <label>Age :</label>
-    <input type="number" class="Age" formControlName="Age">
+    <input type="text" formControlName="Email">
   </div>
 
   <div>
     <label>Phone Number :</label>
-    <input type="number" class="Phone" formControlName="Phone">
+    <input type="text" formControlName="Phone">
   </div>
 
-  <div formArrayName="skill">
-    <label>Skills :</label>
-    <div *ngFor="let control of skills.controls; let i = index">
-      <input type="text" [formControlName]="i">
-    </div>
-    <button type="button" (click)="addSkill()">Add Skill</button>
+  <div formGroupName="address">
+    <label>Address Line 1:</label>
+    <input type="text" formControlName="Addressline1">
+    
+    <label>Address Line 2:</label>
+    <input type="text" formControlName="Addressline2">
+
+    <label>City:</label>
+    <input type="text" formControlName="city">
   </div>
-  <br>
-  <button type="submit">Submit</button>
+
+  
+  
+  <button type="submit" [disabled]="!emp.valid">Submit</button>
 </form>
+
+<h3>Details Entered:</h3>
+
+<b>Name:</b>{{data.FirstName}} {{data.LastName}}<br>
+<b>Email:</b>{{data.Email}}<br>
+<b>Phone Number:</b>{{data.Phone}}<br>
+<b>AddressLine1:</b>{{data.address.Addressline1}}<br>
+<b>AddressLine2:</b>{{data.address.Addressline2}}<br>
+<b>City:</b>{{data.address.city}}
+

@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 interface empForm {
-  Name: FormControl<string | null>;
+  FirstName: FormControl<string | null>;
+  LastName: FormControl<string | null>;
   Email: FormControl<string | null>;
-  Phone: FormControl<number | null>;
-  Age: FormControl<number | null>;
-  skill: FormArray<FormControl<string | null>>;
+  Phone: FormControl<string | null>;
+  address:FormGroup<{
+  Addressline1: FormControl<string | null>;
+  Addressline2:FormControl<string | null>;
+  city:FormControl<string|null>}>;
 }
 
 @Component({
@@ -20,31 +23,31 @@ interface empForm {
 })
 export class AppComponent implements OnInit {
   title = 'employee-form';
-
+  data:any;
   emp: FormGroup<empForm>;
-  skills: FormArray; 
   
   ngOnInit() {
     this.emp = new FormGroup<empForm>({
-      Name: new FormControl('',Validators.required),
-      Email: new FormControl('',Validators.email),
-      Phone: new FormControl(null,Validators.required),
-      Age: new FormControl(null,Validators.required),
-      skill: new FormArray([]),
+      FirstName: new FormControl('',Validators.required),
+      LastName:new FormControl(''),
+      Email: new FormControl('',[Validators.required,Validators.email]),
+      Phone: new FormControl(null,[Validators.required,Validators.pattern("[0-9]*"),Validators.maxLength(10)]),
+      address:new FormGroup({
+      Addressline1: new FormControl(''),
+      Addressline2:new FormControl(''),
+      city:new FormControl('')})
+      
     });
 
-    this.skills = this.emp.get('skill') as FormArray; 
-  }
-
-  addSkill() {
-    this.skills.push(new FormControl(''));
   }
 
   OnSubmitForm() {
     if (this.emp.valid) {
+      this.data=this.emp.value;
       console.log(this.emp.value);
-    } else {
-      console.log('Form is invalid');
+    } 
+    else {
+      console.log('The Form is invalid');
     }
   }
   
