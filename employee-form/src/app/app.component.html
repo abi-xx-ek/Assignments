@@ -1,0 +1,33 @@
+<h1>Employee Details</h1>
+
+<form [formGroup]="emp" (ngSubmit)="OnSubmitForm()">
+  <div>
+    <label>Name :</label>
+    <input type="text" class="input" formControlName="Name"> 
+  </div>
+
+  <div>
+    <label>Email :</label>
+    <input type="text" class="Email" formControlName="Email">
+  </div>
+
+  <div>
+    <label>Age :</label>
+    <input type="number" class="Age" formControlName="Age">
+  </div>
+
+  <div>
+    <label>Phone Number :</label>
+    <input type="number" class="Phone" formControlName="Phone">
+  </div>
+
+  <div formArrayName="skill">
+    <label>Skills :</label>
+    <div *ngFor="let control of skills.controls; let i = index">
+      <input type="text" [formControlName]="i">
+    </div>
+    <button type="button" (click)="addSkill()">Add Skill</button>
+  </div>
+  <br>
+  <button type="submit">Submit</button>
+</form>
