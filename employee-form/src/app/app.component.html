@@ -1,32 +1,37 @@
 <h1>Employee Details</h1>
 
-<form [formGroup]="emp" (ngSubmit)="OnSubmitForm()">
+<form [formGroup]="emp" (ngSubmit)="onSubmitForm()">
   <div>
     <label>First Name :</label>
-    <input type="text" formControlName="FirstName"> 
+    <input type="text" formControlName="firstName"> 
+    <small *ngIf=" emp.get('firstName').invalid"> First name is required</small>
   </div>
 
   <div>
     <label>Last Name :</label>
-    <input type="text" formControlName="LastName"> 
+    <input type="text" formControlName="lastName"> 
   </div>
 
   <div>
     <label>Email :</label>
-    <input type="text" formControlName="Email">
+    <input type="text" formControlName="email">
+    <small *ngIf=" emp.get('email').invalid"> Email is required</small>
+
   </div>
 
   <div>
     <label>Phone Number :</label>
-    <input type="text" formControlName="Phone">
+    <input type="text" formControlName="phone">
+    <small *ngIf=" emp.get('phone').invalid"> Phone Number is required and should only contains numbers and max size is 10</small>
+
   </div>
 
   <div formGroupName="address">
     <label>Address Line 1:</label>
-    <input type="text" formControlName="Addressline1">
+    <input type="text" formControlName="addressLine1">
     
     <label>Address Line 2:</label>
-    <input type="text" formControlName="Addressline2">
+    <input type="text" formControlName="addressLine2">
 
     <label>City:</label>
     <input type="text" formControlName="city">
@@ -34,15 +39,20 @@
 
   
   
-  <button type="submit" [disabled]="!emp.valid">Submit</button>
+  <button type="submit" >Submit</button>
 </form>
 
+<br>
+<div *ngIf="msg">{{msg}}</div>
 <h3>Details Entered:</h3>
 
-<b>Name:</b>{{data.FirstName}} {{data.LastName}}<br>
-<b>Email:</b>{{data.Email}}<br>
-<b>Phone Number:</b>{{data.Phone}}<br>
-<b>AddressLine1:</b>{{data.address.Addressline1}}<br>
-<b>AddressLine2:</b>{{data.address.Addressline2}}<br>
+<div *ngIf="data">
+<b>{{msg}}</b>
+<b>Name:</b>{{data.firstName}} {{data.lastName}}<br>
+<b>Email:</b>{{data.email}}<br>
+<b>Phone Number:</b>{{data.phone}}<br>
+<b>AddressLine1:</b>{{data.address.addressLine1}}<br>
+<b>AddressLine2:</b>{{data.address.addressLine2}}<br>
 <b>City:</b>{{data.address.city}}
+</div>
 

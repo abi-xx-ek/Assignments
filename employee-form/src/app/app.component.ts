@@ -3,14 +3,14 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
-interface empForm {
-  FirstName: FormControl<string | null>;
-  LastName: FormControl<string | null>;
-  Email: FormControl<string | null>;
-  Phone: FormControl<string | null>;
+interface IempForm {
+  firstName: FormControl<string | null>;
+  lastName: FormControl<string | null>;
+  email: FormControl<string | null>;
+  phone: FormControl<string | null>;
   address:FormGroup<{
-  Addressline1: FormControl<string | null>;
-  Addressline2:FormControl<string | null>;
+  addressLine1: FormControl<string | null>;
+  addressLine2:FormControl<string | null>;
   city:FormControl<string|null>}>;
 }
 
@@ -24,29 +24,32 @@ interface empForm {
 export class AppComponent implements OnInit {
   title = 'employee-form';
   data:any;
-  emp: FormGroup<empForm>;
+  msg:string=null;
+
+  emp: FormGroup<IempForm>;
   
   ngOnInit() {
-    this.emp = new FormGroup<empForm>({
-      FirstName: new FormControl('',Validators.required),
-      LastName:new FormControl(''),
-      Email: new FormControl('',[Validators.required,Validators.email]),
-      Phone: new FormControl(null,[Validators.required,Validators.pattern("[0-9]*"),Validators.maxLength(10)]),
+    this.emp = new FormGroup<IempForm>({
+      firstName: new FormControl('',Validators.required),
+      lastName:new FormControl(''),
+      email: new FormControl('',[Validators.required,Validators.email]),
+      phone: new FormControl(null,[Validators.required,Validators.pattern("[0-9]*"),Validators.maxLength(10)]),
       address:new FormGroup({
-      Addressline1: new FormControl(''),
-      Addressline2:new FormControl(''),
+      addressLine1: new FormControl(''),
+      addressLine2:new FormControl(''),
       city:new FormControl('')})
       
     });
 
   }
 
-  OnSubmitForm() {
+  onSubmitForm() {
     if (this.emp.valid) {
-      this.data=this.emp.value;
+      this.data = this.emp.value;
+      this.msg = 'Form submitted successfully'; 
       console.log(this.emp.value);
-    } 
-    else {
+    } else {
+      this.msg = 'The form is invalid'; 
       console.log('The Form is invalid');
     }
   }
