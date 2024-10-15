@@ -43,11 +43,10 @@
 </form>
 
 <br>
-<div *ngIf="msg">{{msg}}</div>
+<div *ngIf="msg"><b>{{msg}}</b></div>
 <h3>Details Entered:</h3>
 
 <div *ngIf="data">
-<b>{{msg}}</b>
 <b>Name:</b>{{data.firstName}} {{data.lastName}}<br>
 <b>Email:</b>{{data.email}}<br>
 <b>Phone Number:</b>{{data.phone}}<br>
