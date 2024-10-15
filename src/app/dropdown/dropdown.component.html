@@ -1,0 +1,9 @@
+Projects:
+<select>
+    <option>Select</option>
+    <ng-container *ngFor="let item of data">
+        <option *ngIf="item.isActive">{{ item.name }}</option>
+    </ng-container>  
+</select>
+
+    

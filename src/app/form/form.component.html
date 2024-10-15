@@ -1,0 +1,22 @@
+<h2>Employee Details</h2>
+<form [formGroup]="emp" (ngSubmit)="onClick()"> 
+<label>First Name:</label>
+<input type="text" formControlName="firstName">
+<label>Last Name:</label>
+<input type="text" formControlName="lastName">
+<label>Projects:</label>
+<select type="object" formControlName="select">
+    <option>Select</option>
+    <option *ngFor="let item of projects">{{item.name|filter:item.isActive}}</option>
+</select>
+
+
+    
+<button type="submit" >Submit</button>
+</form>
+
+<div *ngIf="data">
+<b>First Name:</b>{{data.firstName| uppercase}}<br>
+<b>Last Name</b>{{data.lastName|uppercase}} 
+<b>Project Name:</b>{{data.select}}
+</div>

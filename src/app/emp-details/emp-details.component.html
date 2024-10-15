@@ -1,0 +1,13 @@
+<h2>Employee Details</h2>
+<form [formGroup]="emp" (ngSubmit)="onClick()"> 
+<label>First Name:</label>
+<input type="text" formControlName="firstName">
+<label>Last Name:</label>
+<input type="text" formControlName="lastName">
+<button type="submit" >Submit</button>
+</form>
+
+<div *ngIf="data">
+<b>First Name:</b>{{data.firstName| uppercase}}<br>
+<b>Last Name</b>{{data.lastName|uppercase}} 
+</div>
