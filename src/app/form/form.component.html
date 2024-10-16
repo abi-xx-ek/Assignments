@@ -7,7 +7,9 @@
 <label>Projects:</label>
 <select type="object" formControlName="select">
     <option>Select</option>
-    <option *ngFor="let item of projects">{{item.name|filter:item.isActive}}</option>
+    <ng-container *ngFor="let item of projects">
+        <option *ngIf="item|filter">{{item.name}}</option>
+    </ng-container>
 </select>
 
 

@@ -6,11 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: unknown, isActive : boolean): any {
-    if (isActive==true){
-      return value;
+  transform(value: any):any {
+    if (value.isActive===true){
+      return value.name;
     }
-  
+    
   }
 
 }
