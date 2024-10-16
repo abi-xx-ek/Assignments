@@ -1,8 +1,0 @@
-C:\Assignments\local\C#\Employee_2\bin\Debug\Employee_2.exe.config
-C:\Assignments\local\C#\Employee_2\bin\Debug\Employee_2.exe
-C:\Assignments\local\C#\Employee_2\bin\Debug\Employee_2.pdb
-C:\Assignments\local\C#\Employee_2\obj\Debug\Employee_2.csproj.AssemblyReference.cache
-C:\Assignments\local\C#\Employee_2\obj\Debug\Employee_2.csproj.SuggestedBindingRedirects.cache
-C:\Assignments\local\C#\Employee_2\obj\Debug\Employee_2.csproj.CoreCompileInputs.cache
-C:\Assignments\local\C#\Employee_2\obj\Debug\Employee_2.exe
-C:\Assignments\local\C#\Employee_2\obj\Debug\Employee_2.pdb

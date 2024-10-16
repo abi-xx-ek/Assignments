@@ -1,43 +1,167 @@
 Uber
 
+CREATE TABLE address
+  (
+     pincode   INT PRIMARY KEY,
+     street    VARCHAR(25),
+     city      VARCHAR(25),
+     statename VARCHAR(25),
+     country   VARCHAR(25)
+  )
 
+CREATE TABLE customer
+  (
+     customerid      INT PRIMARY KEY IDENTITY(1, 1),
+     customername    VARCHAR(25),
+     customeremail   VARCHAR(25) UNIQUE,
+     customerphoneno VARCHAR(13),
+     pincode         INT,
+     FOREIGN KEY(pincode) REFERENCES alladdress(pincode)
+  )
 
-create table Address(Pincode int primary key,Street varchar(25),City varchar(25),StateName varchar(25),Country varchar(25))
+CREATE TABLE driver
+  (
+     driverid      INT PRIMARY KEY IDENTITY(1, 1),
+     drivername    VARCHAR(25),
+     driveremail   VARCHAR(25) UNIQUE,
+     driverphoneno VARCHAR(13),
+     pincode       INT,
+     FOREIGN KEY(pincode) REFERENCES alladdress(pincode)
+  )
 
-create table Customer(CustomerId int primary key identity(1,1),CustomerName varchar(25),CustomerEmail varchar(25) unique,CustomerPhoneNo varchar(13),Pincode int,foreign key(Pincode) references AllAddress(pincode))
+CREATE TABLE ridedetails
+  (
+     rideid        INT PRIMARY KEY IDENTITY(1, 1),
+     customerid    INT,
+     driverid      INT,
+     ridedatetime  DATETIME,
+     amount        DECIMAL(10, 2),
+     paymentmethod VARCHAR(25),
+     FOREIGN KEY(driverid) REFERENCES driver(driverid),
+     FOREIGN KEY(customerid) REFERENCES customer(customerid)
+  ) 
 
-create table Driver(DriverId int primary key identity(1,1),DriverName varchar(25),DriverEmail varchar(25) unique,DriverPhoneNo varchar(13),Pincode int,foreign key(Pincode) references AllAddress(pincode))
-
-create table RideDetails(RideId int primary key identity(1,1),CustomerId int,DriverId int,RideDateTime Datetime,Amount decimal(10,2),PaymentMethod varchar(25),foreign key(DriverId) references Driver(DriverId),foreign key(CustomerId) references Customer(CustomerId))
-
+-----------------------------------------------------------------------------------------------------------------
 book my show
 
 
-create table Address(Pincode int primary key,Street varchar(25),city varchar(25),StateName varchar(25),Country varchar(25))
+CREATE TABLE address
+  (
+     pincode   INT PRIMARY KEY,
+     street    VARCHAR(25),
+     city      VARCHAR(25),
+     statename VARCHAR(25),
+     country   VARCHAR(25)
+  )
 
-create table Customers(CustomerId int primary key identity(1,1),CustomerName varchar(25),CustomerEmail varchar(25) unique,CustomerPhoneNo varchar(13),Pincode int,foreign key(Pincode) references Address(Pincode))
+CREATE TABLE customers
+  (
+     customerid      INT PRIMARY KEY IDENTITY(1, 1),
+     customername    VARCHAR(25),
+     customeremail   VARCHAR(25) UNIQUE,
+     customerphoneno VARCHAR(13),
+     pincode         INT,
+     FOREIGN KEY(pincode) REFERENCES address(pincode)
+  )
 
-create table Theatres(TheatreId int primary key identity(1,1),TheatreName varchar(25),NumberOfScreens int,PhoneNo varchar(13),Pincode int,foreign key(Pincode) references Address(Pincode))
+CREATE TABLE theatres
+  (
+     theatreid       INT PRIMARY KEY IDENTITY(1, 1),
+     theatrename     VARCHAR(25),
+     numberofscreens INT,
+     phoneno         VARCHAR(13),
+     pincode         INT,
+     FOREIGN KEY(pincode) REFERENCES address(pincode)
+  )
 
-create table Movies(MovieId int primary key identity(1,1),MovieName varchar(25),DirectorName varchar(25),ProducerName varchar(25),ActorName varchar(25),Language varchar(25))
+CREATE TABLE movies
+  (
+     movieid      INT PRIMARY KEY IDENTITY(1, 1),
+     moviename    VARCHAR(25),
+     directorname VARCHAR(25),
+     producername VARCHAR(25),
+     actorname    VARCHAR(25),
+     language     VARCHAR(25)
+  )
 
-
-create table OrderDetails(CustomerId int,TheatreId int,MovieId int,OrderDateTime Datetime,ShowDateTime datetime,Amount decimal(10,2),PaymentMethod varchar(25),
-foreign key(TheatreId) references theatres(TheatreId),foreign key(CustomerId) references Customer(CustomerId),foreign key(MovieId) references movies(MovieId));
-
-
+CREATE TABLE orderdetails
+  (
+     customerid    INT,
+     theatreid     INT,
+     movieid       INT,
+     orderdatetime DATETIME,
+     showdatetime  DATETIME,
+     amount        DECIMAL(10, 2),
+     paymentmethod VARCHAR(25),
+     FOREIGN KEY(theatreid) REFERENCES theatres(theatreid),
+     FOREIGN KEY(customerid) REFERENCES customer(customerid),
+     FOREIGN KEY(movieid) REFERENCES movies(movieid)
+  ); 
+------------------------------------------------------------------------------------------------------------------------
 amazon
 
-create table Address(Pincode int primary key,Street varchar(25),City varchar(25),StateName varchar(25),Country varchar(25))
+CREATE TABLE address
+  (
+     pincode   INT PRIMARY KEY,
+     street    VARCHAR(25),
+     city      VARCHAR(25),
+     statename VARCHAR(25),
+     country   VARCHAR(25)
+  )
 
-create table Customers(CustomerId int primary key identity(1,1),CustomerName varchar(25),CustomerEmail varchar(25) unique,CustomerPhoneNo varchar(13),Pincode int,foreign key(Pincode) references Address(Pincode))
+CREATE TABLE customers
+  (
+     customerid      INT PRIMARY KEY IDENTITY(1, 1),
+     customername    VARCHAR(25),
+     customeremail   VARCHAR(25) UNIQUE,
+     customerphoneno VARCHAR(13),
+     pincode         INT,
+     FOREIGN KEY(pincode) REFERENCES address(pincode)
+  )
 
-create table Sellers(SellerId int primary key identity(1,1),SellerName varchar(25),SellerEmail varchar(25) unique,SellerPhoneNo varchar(13))
+CREATE TABLE sellers
+  (
+     sellerid      INT PRIMARY KEY IDENTITY(1, 1),
+     sellername    VARCHAR(25),
+     selleremail   VARCHAR(25) UNIQUE,
+     sellerphoneno VARCHAR(13)
+  )
 
-create table Products(ProductId int primary key identity(1,1),ProductName varchar(25),Category varchar(25),Price decimal(10,2))
+CREATE TABLE products
+  (
+     productid   INT PRIMARY KEY IDENTITY(1, 1),
+     productname VARCHAR(25),
+     category    VARCHAR(25),
+     price       DECIMAL(10, 2)
+  )
 
-create table Orders(OrderId int primary key identity(1,1),CustomerId int,SellerId int,OrderDate date,EstimatedDelivery date,Amount decimal(10,2),PaymentMethod varchar(20),foreign key(CustomerId) references Customers(CustomerId),foreign key(SellerId) references sellers(SellerId))
+CREATE TABLE orders
+  (
+     orderid           INT PRIMARY KEY IDENTITY(1, 1),
+     customerid        INT,
+     sellerid          INT,
+     orderdate         DATE,
+     estimateddelivery DATE,
+     amount            DECIMAL(10, 2),
+     paymentmethod     VARCHAR(20),
+     FOREIGN KEY(customerid) REFERENCES customers(customerid),
+     FOREIGN KEY(sellerid) REFERENCES sellers(sellerid)
+  )
 
-create table OrderDetails(OrderDetailsId int primary key identity(1,1),OrderId int,ProductId int,Quantity int,foreign key(ProductId) references Products(ProductId),foreign key(OrderId) references Orders(OrderId))
+CREATE TABLE orderdetails
+  (
+     orderdetailsid INT PRIMARY KEY IDENTITY(1, 1),
+     orderid        INT,
+     productid      INT,
+     quantity       INT,
+     FOREIGN KEY(productid) REFERENCES products(productid),
+     FOREIGN KEY(orderid) REFERENCES orders(orderid)
+  )
 
-create table Category(CategoryId int primary key identity(1,1),ProductId int,CategoryName varchar(25),foreign key(ProductId) references Products(ProductId))
+CREATE TABLE category
+  (
+     categoryid   INT PRIMARY KEY IDENTITY(1, 1),
+     productid    INT,
+     categoryname VARCHAR(25),
+     FOREIGN KEY(productid) REFERENCES products(productid)
+  ) 

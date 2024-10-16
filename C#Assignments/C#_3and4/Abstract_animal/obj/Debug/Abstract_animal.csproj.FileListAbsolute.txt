@@ -1,8 +1,0 @@
-C:\Assignments\local\C#\Abstract_animal\bin\Debug\Abstract_animal.exe.config
-C:\Assignments\local\C#\Abstract_animal\bin\Debug\Abstract_animal.exe
-C:\Assignments\local\C#\Abstract_animal\bin\Debug\Abstract_animal.pdb
-C:\Assignments\local\C#\Abstract_animal\obj\Debug\Abstract_animal.csproj.AssemblyReference.cache
-C:\Assignments\local\C#\Abstract_animal\obj\Debug\Abstract_animal.csproj.SuggestedBindingRedirects.cache
-C:\Assignments\local\C#\Abstract_animal\obj\Debug\Abstract_animal.csproj.CoreCompileInputs.cache
-C:\Assignments\local\C#\Abstract_animal\obj\Debug\Abstract_animal.exe
-C:\Assignments\local\C#\Abstract_animal\obj\Debug\Abstract_animal.pdb
