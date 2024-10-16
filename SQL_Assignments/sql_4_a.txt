@@ -31,8 +31,7 @@ where pr.patientid is null
 -- 7. List all doctors who have appointments in the next week, along with the patients they're scheduled to see.
 
     select doctorname,patientname,appointmentdate from appointments a join patients p on a.patientid = p.patientid join doctors d on d.doctorid = a.doctorid 
-where appointmentdate < getdate()+7 and appointmentdate >= getdate()
-
+where datepart(week,appointmentdate)=datepart(week,getdate())+1
 
 -- 8. Display all medications prescribed to patients over 60 years old, including medications not prescribed to this age group.
 
