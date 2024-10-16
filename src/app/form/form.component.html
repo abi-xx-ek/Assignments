@@ -3,12 +3,19 @@
 <label>First Name:</label>
 <input type="text" formControlName="firstName">
 <label>Last Name:</label>
-<input type="text" formControlName="lastName">
+<input type="text" formControlName="lastName"><br>
+
 <label>Projects:</label>
-<select type="object" formControlName="select">
-    <option>Select</option>
-    <option *ngFor="let item of projects|filter">{{item.name}}</option>
-</select>    
+
+<ng-select
+  [items]="projects|filter:true"
+  bindLabel="name"
+  bindValue="name"
+  formControlName="select"
+  placeholder="Select name"
+>
+</ng-select>
+
 <button type="submit" >Submit</button>
 </form>
 

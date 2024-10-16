@@ -2,17 +2,18 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 import { FilterPipe } from '../dropdown-pipe/filter.pipe';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 interface IempForm {
   firstName: FormControl<string | null>;
   lastName: FormControl<string | null>;
-  select:FormControl<object|null>;}
+  select:FormControl<any|null>;}
 
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,FilterPipe],
+  imports: [ReactiveFormsModule,CommonModule,FilterPipe,NgSelectModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
@@ -21,16 +22,16 @@ export class FormComponent implements OnInit
   emp: FormGroup<IempForm>;
   data:any;
   projects=[
-    { "name": "Hilite", "isActive": true },
-    { "name": "Lulu", "isActive": true },
-    { "name": "Cordova School", "isActive": true },
-    { "name": "Azure Heights Apartments", "isActive": true },
-    { "name": "Greenfield Mall", "isActive": true },
-    { "name": "Pinnacle Corporate Towers", "isActive": true },
-    { "name": "Sunshine Valley Resort", "isActive": true },
-    { "name": "Everest Office Park", "isActive": false },
-    { "name": "Maplewood Villas", "isActive": false },
-    { "name": "Sterling Shopping Complex", "isActive": false }
+    { name: "Hilite",isActive: true },
+    { name: "Lulu", isActive: true },
+    { name: "Cordova School", isActive: true },
+    { name: "Azure Heights Apartments", isActive: true },
+    { name: "Greenfield Mall", isActive: true },
+    { name: "Pinnacle Corporate Towers", isActive: true },
+    { name: "Sunshine Valley Resort", isActive: true },
+    { name: "Everest Office Park", isActive: false },
+    { name: "Maplewood Villas", isActive: false },
+    { name: "Sterling Shopping Complex", isActive: false }
   ]
 
   ngOnInit() {
@@ -46,4 +47,3 @@ export class FormComponent implements OnInit
   }
 }
 }
-
