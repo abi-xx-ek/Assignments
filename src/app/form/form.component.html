@@ -7,13 +7,8 @@
 <label>Projects:</label>
 <select type="object" formControlName="select">
     <option>Select</option>
-    <ng-container *ngFor="let item of projects">
-        <option *ngIf="item|filter">{{item.name}}</option>
-    </ng-container>
-</select>
-
-
-    
+    <option *ngFor="let item of projects|filter">{{item.name}}</option>
+</select>    
 <button type="submit" >Submit</button>
 </form>
 

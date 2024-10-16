@@ -7,8 +7,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(value: any):any {
-    if (value.isActive===true){
-      return value.name;
+    for(let item of value){
+      if (item.isActive===true){
+        return value;
+    }
     }
     
   }
