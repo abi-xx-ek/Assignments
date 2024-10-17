@@ -1,0 +1,31 @@
+<h2>Employee Details</h2>
+<form [formGroup]="emp" (ngSubmit)="onClick()"> 
+<label >First Name:</label>
+<input type="text" formControlName="firstName">
+<label>Last Name:</label>
+<input type="text" formControlName="lastName"><br>
+<label>Email:</label>
+<input type="text" formControlName="email"><br>
+
+
+<label >Projects:</label>
+
+<ng-select 
+  [items]="projects|filter:true" 
+  bindLabel="name"
+  bindValue="name"
+  formControlName="select"
+  placeholder="Select name"
+></ng-select>
+<button type="submit">Submit</button>
+</form>
+
+
+
+<div *ngIf="data">
+<p appHover><b >First Name:</b>{{data.firstName| uppercase}}</p>
+<b>Last Name</b>{{data.lastName|uppercase}} <br>
+<b>Project Name:</b>{{data.select}}<br>
+<div *appEmail= "data.email"><b>Email:</b> {{data.email}}</div>
+
+</div>
