@@ -1,23 +1,12 @@
 Uber
 
-CREATE TABLE address
-  (	
-	 addressid INT PRIMARY KEY IDENTITY(1, 1),
-     pincode   INT,
-     street    VARCHAR(25),
-     city      VARCHAR(25),
-     statename VARCHAR(25),
-     country   VARCHAR(25)
-  )
-
 CREATE TABLE customer
   (
      customerid      INT PRIMARY KEY IDENTITY(1, 1),
      customername    VARCHAR(25),
      customeremail   VARCHAR(25) UNIQUE,
      customerphoneno VARCHAR(13),
-     addressid       INT,
-     FOREIGN KEY(addressid) REFERENCES address(addressid)
+     address         VARCHAR(100),
   )
 
 CREATE TABLE driver
@@ -26,10 +15,9 @@ CREATE TABLE driver
      drivername     VARCHAR(25),
      driveremail    VARCHAR(25) UNIQUE,
      driverphoneno  VARCHAR(13),
-     addressid      INT,
+     address         VARCHAR(100),
 	 RegistrationNo VARCHAR(25),
      FOREIGN KEY(RegistrationNo) REFERENCES car(RegistrationNo),
-     FOREIGN KEY(addressid) REFERENCES address(addressid)
   )
 
 CREATE TABLE ridedetails
@@ -59,25 +47,13 @@ CREATE TABLE car
 -----------------------------------------------------------------------------------------------------------------
 book my show
 
-
-CREATE TABLE address
-  (
-     addressid INT PRIMARY KEY IDENTITY(1, 1),
-     pincode   INT,
-     street    VARCHAR(25),
-     city      VARCHAR(25),
-     statename VARCHAR(25),
-     country   VARCHAR(25)
-  )
-
 CREATE TABLE customers
   (
      customerid      INT PRIMARY KEY IDENTITY(1, 1),
      customername    VARCHAR(25),
      customeremail   VARCHAR(25) UNIQUE,
      customerphoneno VARCHAR(13),
-     addressid         INT,
-     FOREIGN KEY(addressid) REFERENCES address(addressid)
+     address         VARCHAR(100),
   )
 CREATE TABLE movies
   (
@@ -93,8 +69,7 @@ CREATE TABLE theatres
      theatrename     VARCHAR(25),
      numberofscreens INT,
      phoneno         VARCHAR(13),
-     addressid       INT,
-     FOREIGN KEY(addressid) REFERENCES address(addressid)
+     address         VARCHAR(100),
   )
   CREATE TABLE screens
   (
@@ -170,15 +145,6 @@ CREATE TABLE orderdetails
 ------------------------------------------------------------------------------------------------------------------------
 amazon
 
-CREATE TABLE address
-  (
-     addressid INT PRIMARY KEY IDENTITY(1, 1),
-     pincode   INT,
-     street    VARCHAR(25),
-     city      VARCHAR(25),
-     statename VARCHAR(25),
-     country   VARCHAR(25)
-  )
 
 CREATE TABLE customers
   (
@@ -186,8 +152,7 @@ CREATE TABLE customers
      customername    VARCHAR(25),
      customeremail   VARCHAR(25) UNIQUE,
      customerphoneno VARCHAR(13),
-     addressid         INT,
-     FOREIGN KEY(addressid) REFERENCES address(addressid)
+     address         VARCHAR(100),
   )
 
 CREATE TABLE sellers
@@ -195,7 +160,8 @@ CREATE TABLE sellers
      sellerid      INT PRIMARY KEY IDENTITY(1, 1),
      sellername    VARCHAR(25),
      selleremail   VARCHAR(25) UNIQUE,
-     sellerphoneno VARCHAR(13)
+     sellerphoneno VARCHAR(13),
+     address         VARCHAR(100),
   )
 
 CREATE TABLE products
