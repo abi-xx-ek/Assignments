@@ -31,6 +31,7 @@ namespace Card.Management.Application.Methods
                 account.Balance = account.Balance - Transaction.Amount;
 
             }
+            _context.Accounts.Update(account);
             _context.SaveChanges();
         }
     }
