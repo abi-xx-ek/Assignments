@@ -178,6 +178,7 @@ CREATE TABLE orders
      customerid        INT,
      sellerid          INT,
      orderdate         DATE,
+	 paymentmethod  VARCHAR(20),
      FOREIGN KEY(customerid) REFERENCES customers(customerid),
      FOREIGN KEY(sellerid) REFERENCES sellers(sellerid)
   )
@@ -188,9 +189,8 @@ CREATE TABLE orderdetails
      orderid        INT,
      productid      INT,
      quantity       INT,
-	 amount         DECIMAL(10, 2),
-	 paymentmethod  VARCHAR(20),
 	 orderstatus	VARCHAR(20),
+	 amount         DECIMAL(10, 2),
 	 estimateddelivery DATE,
      FOREIGN KEY(productid) REFERENCES products(productid),
      FOREIGN KEY(orderid) REFERENCES orders(orderid)
