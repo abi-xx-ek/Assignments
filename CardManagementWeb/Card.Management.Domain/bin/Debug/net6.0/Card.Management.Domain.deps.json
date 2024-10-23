@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Card.Management.Domain/1.0.0": {
+        "runtime": {
+          "Card.Management.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Card.Management.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

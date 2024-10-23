@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "GzgHfyW1+mbKnQLkKiiLzItgRSJQdydk2BeVLKa59P4=",
+  "Source": "Card.Management.Api",
+  "BasePath": "_content/Card.Management.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

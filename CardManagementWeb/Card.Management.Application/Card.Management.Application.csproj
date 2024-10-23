@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Card.Management.Domain\Card.Management.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Card.Management.Application">
+      <HintPath>..\Card.Management.Infrastructure\bin\Debug\net6.0\Card.Management.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="Card.Management.Domain">
+      <HintPath>..\Card.Management.Domain\bin\Debug\net6.0\Card.Management.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Card.Management.Infrastructure">
+      <HintPath>..\Card.Management.Infrastructure\bin\Debug\net6.0\Card.Management.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

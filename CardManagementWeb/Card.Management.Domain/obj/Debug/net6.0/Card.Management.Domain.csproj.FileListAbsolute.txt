@@ -1,0 +1,12 @@
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\bin\Debug\net6.0\Card.Management.Domain.deps.json
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\bin\Debug\net6.0\Card.Management.Domain.dll
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\bin\Debug\net6.0\Card.Management.Domain.pdb
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\obj\Debug\net6.0\Card.Management.Domain.csproj.AssemblyReference.cache
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\obj\Debug\net6.0\Card.Management.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\obj\Debug\net6.0\Card.Management.Domain.AssemblyInfoInputs.cache
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\obj\Debug\net6.0\Card.Management.Domain.AssemblyInfo.cs
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\obj\Debug\net6.0\Card.Management.Domain.csproj.CoreCompileInputs.cache
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\obj\Debug\net6.0\Card.Management.Domain.dll
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\obj\Debug\net6.0\refint\Card.Management.Domain.dll
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\obj\Debug\net6.0\Card.Management.Domain.pdb
+C:\Assignments\Assignments-GIT\CardManagementWeb\Card.Management.Domain\obj\Debug\net6.0\ref\Card.Management.Domain.dll
