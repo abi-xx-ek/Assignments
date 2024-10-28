@@ -1,0 +1,8 @@
+C:\Assignments\local\C#\Shape_interface\bin\Debug\Shape_interface.exe.config
+C:\Assignments\local\C#\Shape_interface\bin\Debug\Shape_interface.exe
+C:\Assignments\local\C#\Shape_interface\bin\Debug\Shape_interface.pdb
+C:\Assignments\local\C#\Shape_interface\obj\Debug\Shape_interface.csproj.AssemblyReference.cache
+C:\Assignments\local\C#\Shape_interface\obj\Debug\Shape_interface.csproj.SuggestedBindingRedirects.cache
+C:\Assignments\local\C#\Shape_interface\obj\Debug\Shape_interface.csproj.CoreCompileInputs.cache
+C:\Assignments\local\C#\Shape_interface\obj\Debug\Shape_interface.exe
+C:\Assignments\local\C#\Shape_interface\obj\Debug\Shape_interface.pdb

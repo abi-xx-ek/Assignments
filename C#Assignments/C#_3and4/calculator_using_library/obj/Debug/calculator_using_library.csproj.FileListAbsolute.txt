@@ -1,0 +1,11 @@
+C:\Assignments\local\C#\calculator_using_library\bin\Debug\calculator_using_library.exe.config
+C:\Assignments\local\C#\calculator_using_library\bin\Debug\calculator_using_library.exe
+C:\Assignments\local\C#\calculator_using_library\bin\Debug\calculator_using_library.pdb
+C:\Assignments\local\C#\calculator_using_library\bin\Debug\math.operations.dll
+C:\Assignments\local\C#\calculator_using_library\bin\Debug\math.operations.pdb
+C:\Assignments\local\C#\calculator_using_library\obj\Debug\calculator_using_library.csproj.AssemblyReference.cache
+C:\Assignments\local\C#\calculator_using_library\obj\Debug\calculator_using_library.csproj.SuggestedBindingRedirects.cache
+C:\Assignments\local\C#\calculator_using_library\obj\Debug\calculator_using_library.csproj.CoreCompileInputs.cache
+C:\Assignments\local\C#\calculator_using_library\obj\Debug\calculator_using_library.csproj.CopyComplete
+C:\Assignments\local\C#\calculator_using_library\obj\Debug\calculator_using_library.exe
+C:\Assignments\local\C#\calculator_using_library\obj\Debug\calculator_using_library.pdb
